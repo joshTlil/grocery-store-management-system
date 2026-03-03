@@ -17,7 +17,7 @@ public class InventoryServiceTesting {
     }
 
     @Test
-    public void testAddProdcut(){
+    public void testAddProduct(){
         Product p = new Product("1", "Apple", 1.50, 10);
         service.addProduct(p);
 
