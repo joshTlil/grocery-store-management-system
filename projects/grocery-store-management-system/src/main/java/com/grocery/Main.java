@@ -36,4 +36,22 @@ public class Main {
         System.out.println("0. Exit");
         System.out.println("Select Option: ");
     }
+
+    private static void saveInventory(){
+        try{
+            fs.save("inventory.ser", invService);
+            System.out.println("Inventory saved");
+        }catch (Exception e){
+            System.out.println("Error saving inventory");
+        }
+    }
+
+    private static void loadInventory(){
+        try{
+            invService = (InventoryService) fs.load("inventory.ser");
+            System.out.println("Inventory loaded");
+        }catch (Exception e){
+            System.out.println("Error loading inventory");
+        }
+    }
 }
