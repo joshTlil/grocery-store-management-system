@@ -11,18 +11,9 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
-        //False to prevent while loop from running in current state
-        boolean running = false;
-
-        while(running){
-            menu();
-            String choice = scanner.nextLine();
-
-            switch(choice){
-                default:
-                    System.out.println("Invalid Option");
-            }
-        }
+        //Working committing and pushing into main
+        //In progress
+        menu();
     }
 
     private static void menu(){
