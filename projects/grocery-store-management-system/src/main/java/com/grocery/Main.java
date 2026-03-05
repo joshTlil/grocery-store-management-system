@@ -11,8 +11,8 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
+        //Working committing and pushing into main
         menu();
-
     }
 
     private static void menu(){
