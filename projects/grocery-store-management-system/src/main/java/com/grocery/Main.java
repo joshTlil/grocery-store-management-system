@@ -1,6 +1,7 @@
 package com.grocery;
 
 import com.grocery.model.Product;
+import com.grocery.service.Checkout;
 import com.grocery.service.FileService;
 import com.grocery.service.InventoryService;
 import com.grocery.util.RegexUtil;
@@ -89,6 +90,14 @@ public class Main {
 
     private static void viewAllProducts(){
         invService.getAllProducts().forEach(System.out::println);
+    }
+
+    private static void simulateCheckout() {
+        Checkout lane1 = new Checkout("Lane 1");
+        Checkout lane2 = new Checkout("Lane 2");
+
+        lane1.start();
+        lane2.start();
     }
 
 }
