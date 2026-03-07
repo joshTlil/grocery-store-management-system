@@ -2,6 +2,7 @@ package com.grocery;
 
 import com.grocery.service.FileService;
 import com.grocery.service.InventoryService;
+import com.grocery.util.RegexUtil;
 
 import java.util.Scanner;
 
@@ -54,4 +55,16 @@ public class Main {
             System.out.println("Error loading inventory");
         }
     }
+
+    private static void searchProduct(){
+        System.out.println("Search product: ");
+        String pattern = scanner.nextLine();
+
+        invService.getAllProducts().forEach(product -> {
+            if(RegexUtil.matches(product.getName(), pattern)){
+                System.out.println(product);
+            }
+        });
+    }
+
 }
