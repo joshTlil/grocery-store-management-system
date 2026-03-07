@@ -1,5 +1,6 @@
 package com.grocery;
 
+import com.grocery.model.Product;
 import com.grocery.service.FileService;
 import com.grocery.service.InventoryService;
 import com.grocery.util.RegexUtil;
@@ -56,6 +57,29 @@ public class Main {
                 System.out.println(product);
             }
         });
+    }
+
+    private static void addProduct(){
+        System.out.println("Enter ID: ");
+        String id = scanner.nextLine();
+
+        System.out.println("Enter Name: ");
+        String name = scanner.nextLine();
+
+        System.out.println("Enter Price: ");
+        double price = Double.parseDouble(scanner.nextLine());
+
+        System.out.println("Enter Quantity: ");
+        int quantity = Integer.parseInt(scanner.nextLine());
+
+        Product product = new Product(id, name, price, quantity);
+        invService.addProduct(product);
+
+        System.out.println("Product added successfully!");
+    }
+
+    private static void viewAllProducts(){
+        invService.getAllProducts().forEach(System.out::println);
     }
 
 }
