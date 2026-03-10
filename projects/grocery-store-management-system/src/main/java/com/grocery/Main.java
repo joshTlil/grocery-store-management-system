@@ -15,13 +15,37 @@ public class Main {
 
     public static void main(String[] args){
         //False to prevent while loop from running in current state
-        boolean running = false;
+        boolean running = true;
 
         while(running){
             menu();
             String choice = scanner.nextLine();
 
             switch(choice){
+                case "1":
+                    addProduct();
+                    break;
+                case "2":
+                    viewAllProducts();
+                    break;
+                case "3":
+                    searchProduct();
+                    break;
+                case "4":
+                    //Menu shows up before checkout finishes
+                    simulateCheckout();
+                    break;
+                case "5":
+                    //Error saving file
+                    saveInventory();
+                    break;
+                case "6":
+                    loadInventory();
+                    break;
+                case "0":
+                    running = false;
+                    System.out.println("Exiting System...");
+                    break;
                 default:
                     System.out.println("Invalid Option");
             }
