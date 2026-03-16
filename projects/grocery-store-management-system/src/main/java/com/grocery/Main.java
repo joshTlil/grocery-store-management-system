@@ -14,7 +14,6 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
-        //False to prevent while loop from running in current state
         boolean running = true;
 
         while(running){
