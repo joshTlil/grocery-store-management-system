@@ -14,9 +14,41 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
-        //Working committing and pushing into main
-        //In progress
-        menu();
+        //False to prevent while loop from running in current state
+        boolean running = true;
+
+        while(running){
+            menu();
+            String choice = scanner.nextLine();
+
+            switch(choice){
+                case "1":
+                    addProduct();
+                    break;
+                case "2":
+                    viewAllProducts();
+                    break;
+                case "3":
+                    searchProduct();
+                    break;
+                case "4":
+                    simulateCheckout();
+                    break;
+                case "5":
+                    //Error saving file
+                    saveInventory();
+                    break;
+                case "6":
+                    loadInventory();
+                    break;
+                case "0":
+                    running = false;
+                    System.out.println("Exiting System...");
+                    break;
+                default:
+                    System.out.println("Invalid Option");
+            }
+        }
     }
 
     private static void menu(){
@@ -89,6 +121,14 @@ public class Main {
 
         lane1.start();
         lane2.start();
+
+        try{
+            lane1.join();
+            lane2.join();
+        } catch (InterruptedException e) {
+            System.out.println("There was an issue with the checkout");
+        }
+        System.out.println("Checkout complete!");
     }
 
 }

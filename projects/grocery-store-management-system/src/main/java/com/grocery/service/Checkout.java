@@ -9,7 +9,7 @@ public class Checkout  extends Thread{
 
     @Override
     public void run(){
-        System.out.println(laneName + "processing order...");
+        System.out.println(laneName + " processing order...");
         try{
             Thread.sleep(3000);
         } catch (InterruptedException e) {
