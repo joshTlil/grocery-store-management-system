@@ -32,7 +32,6 @@ public class Main {
                     searchProduct();
                     break;
                 case "4":
-                    //Menu shows up before checkout finishes
                     simulateCheckout();
                     break;
                 case "5":
@@ -122,6 +121,14 @@ public class Main {
 
         lane1.start();
         lane2.start();
+
+        try{
+            lane1.join();
+            lane2.join();
+        } catch (InterruptedException e) {
+            System.out.println("There was an issue with the checkout");
+        }
+        System.out.println("Checkout complete!");
     }
 
 }
