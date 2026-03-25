@@ -1,7 +1,7 @@
 package com.grocery.test;
 
 import com.grocery.service.Checkout;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class CheckoutTest {
     @Test

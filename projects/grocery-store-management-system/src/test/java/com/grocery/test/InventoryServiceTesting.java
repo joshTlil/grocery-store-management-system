@@ -2,17 +2,16 @@ package com.grocery.test;
 
 import com.grocery.model.Product;
 import com.grocery.service.InventoryService;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class InventoryServiceTesting {
 
     private InventoryService service;
 
-    @Before
+    @BeforeEach
     public void setup(){
         service = new InventoryService();
     }
@@ -22,7 +21,7 @@ public class InventoryServiceTesting {
         Product p = new Product("1", "Apple", 1.50, 10);
         service.addProduct(p);
 
-        Assert.assertEquals(p, service.getProduct("1"));
+        Assertions.assertEquals(p, service.getProduct("1"));
     }
 
 }
